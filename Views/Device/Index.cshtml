@@ -1,0 +1,11 @@
+﻿@model DeviceList
+
+@using (Html.BeginForm("Index", "Device", FormMethod.Post))
+{
+    @for (var i = 0; i < Model.Devices.Count(); i++)
+    {
+        @Html.EditorFor(model => model.Devices[i], Model.Devices[i].GetType().Name)
+    }
+
+    <button type="submit">Submit</button>
+}
